@@ -15,3 +15,4 @@ browser-sync start --server --files='index.html,bundle/app.css'
 [BS] File changed: bundle/app.css
 [BS] File changed: index.html
 [BS] File changed: index.html
+Makefile:8: recipe for target 'server' failed
