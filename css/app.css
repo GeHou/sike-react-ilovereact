@@ -89,6 +89,8 @@ a:hover {
   flex-grow: 1;
   flex-basis: 0;
   align-self: stretch;
+  align-items: center;
+  justify-content: center;
   /*background-color: rgba(255,0,0,0.3);*/
 }
 
@@ -96,5 +98,52 @@ a:hover {
   flex-grow: 1;
   flex-basis: 0;
   align-self: stretch;
+  align-items: flex-start;
+  justify-content: center;
   /*background-color: rgba(0,255,0,0.3);*/
+}
+
+.feature-description p, .feature-description h2 {
+  margin-left: 114px;
+  margin-right: 50px;
+}
+
+.img-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -225px 0 0 -128px;
+}
+
+.android {
+  overflow: hidden;
+}
+
+.android-robot {
+  position: absolute;
+  bottom:0;
+  right:0;
+  transform: translate(50%, 50%) rotate(-45deg);
+}
+
+#slider-control {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  padding: 3px;
+}
+
+#slider-control a {
+  padding: 3px;
+}
+
+#slider-control .dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+#slider-control .active .dot {
+  background-color: #fff;
 }
