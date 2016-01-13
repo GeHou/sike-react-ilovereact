@@ -1,11 +1,11 @@
 .PHONY: css
 css:
 	mkdir -p bundle
-	postcss --watch --use autoprefixer --use postcss-import css/day2.css --output bundle/day2.css
+	postcss --watch --use autoprefixer --use postcss-import css/app.css --output bundle/app.css
 
 .PHONY: server
 server:
-	browser-sync start --server --files='day2.html,bundle/day2.css'
+	browser-sync start --server --files='index.html,bundle/app.css'
 
 
 .PHONY: clean
