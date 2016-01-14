@@ -1,0 +1,80 @@
+<!-- 使用 html5 语法 -->
+<!doctype html>
+
+<html lang="en">
+    <head>
+    <style>
+        html, body {
+          width: 100%;
+          height: 100%;
+          margin: 0; padding: 0;
+          
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #box {
+          position: relative;
+          width: 100px;
+          height: 100px;
+          background-color: rgba(255,0,0,0.3);
+        }
+    </style>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+
+    </body>
+</html>
+<script>
+    // var deg360 = 2*Math.PI;
+    // var $box = document.getElementById("box");
+
+    // // 每秒做 60 个记号。把它当做计算当前时间的计数器。
+    // var tick = 0;
+    // function draw() {
+    //   var second = tick / 60;
+
+    //   // 计算当前位置
+    //   var x = Math.sin(second * deg360) * 100;
+    //   $box.style.left = x + "px";
+
+    //   tick++;
+
+    //   // 设置一个计时器在 16ms 后重绘（60fps）
+    //   setTimeout(draw,1000/60);
+    // }
+
+
+    // setTimeout(draw,1000/60);
+
+</script>
+
+<script>
+    var deg360 = 2*Math.PI;
+    var $box = document.getElementById("box");
+
+    var start = null;
+    function draw(time) {
+      // `time` 现在是以毫秒表示的当前时间
+      if(!start) {
+        start = time;
+      }
+
+      var second = (time - start) / 1000;
+
+      // 每秒一个 sin 循环
+      var x = Math.sin(second * deg360) * 100;
+      $box.style.left = x + "px";
+
+      // 与浏览器同步重绘
+      requestAnimationFrame(draw);
+    }
+
+
+    requestAnimationFrame(draw);
+
+</script>
