@@ -95,7 +95,9 @@ var addSmoothScrolling = function() {
 function addScrollMagic() {
   var controller = new ScrollMagic.Controller();
   var scene = new ScrollMagic.Scene({
-                  triggerElement: "#native"
+                  triggerElement: "#native",
+                  triggerHook: 1,
+                  duration: "100%"
                 })
                 .setTween(".scroll-overlay", 1, {opacity: 1}) // trigger a TweenMax.to tween
                 .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
