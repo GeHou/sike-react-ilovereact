@@ -4,6 +4,7 @@ window.onload = function() {
  	animateRobot();
  	updateSliderControl();
  	addSmoothScrolling();
+  addScrollMagic();
 };
 
 // 使用 onscroll 回调函数来更新 slider
@@ -89,4 +90,14 @@ var addSmoothScrolling = function() {
       scrollToElement(document.querySelector(href));
     });
   }
+}
+
+function addScrollMagic() {
+  var controller = new ScrollMagic.Controller();
+  var scene = new ScrollMagic.Scene({
+                  triggerElement: "#native"
+                })
+                .setTween(".scroll-overlay", 1, {opacity: 1}) // trigger a TweenMax.to tween
+                .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+                .addTo(controller);
 }
